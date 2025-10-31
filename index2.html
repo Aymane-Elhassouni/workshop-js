@@ -389,12 +389,18 @@
          */
         function addCollaborator() {
             // À IMPLÉMENTER
-            let nom = document.getElementById('collaboratorName').value;
-            collaborators [n]=nom;
-            count++
-            document.getElementById('collaboratorName').value='';
-            
-            
+            const input_nom = document.getElementById('collaboratorName');
+            const nom = input_nom.value;
+            if(nom === ''){
+                console.log("Saisir un nom");
+            }else if(collaborators.includes(nom)){
+                console.log("Le nom déja existe");
+            }else{
+                collaborators.push(nom);  
+                input_nom.value = '';
+                updateCollaboratorsList();
+                updateAssigneeSelect();
+            }
         }
 
         /**
