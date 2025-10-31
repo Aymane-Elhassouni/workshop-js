@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
             margin: 0 auto;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
 
@@ -64,7 +65,9 @@
             margin-bottom: 15px;
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             padding: 12px;
             border: 2px solid #ddd;
             border-radius: 8px;
@@ -72,12 +75,15 @@
             transition: border-color 0.3s;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             outline: none;
             border-color: #667eea;
         }
 
-        input[type="text"], textarea {
+        input[type="text"],
+        textarea {
             flex: 1;
         }
 
@@ -155,7 +161,7 @@
             margin-bottom: 10px;
             border-radius: 8px;
             border-left: 4px solid #667eea;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .story-item strong {
@@ -224,14 +230,14 @@
             padding: 15px;
             margin-bottom: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             cursor: move;
             transition: all 0.3s;
         }
 
         .card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .card h4 {
@@ -303,6 +309,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -374,7 +381,7 @@
         let collaborators = [];
         let userStories = [];
         let boardStories = [];
-        let storyIdCounter = 1;
+        let storyIdCounter = 0;
 
         /**
          * Fonction pour ajouter un nouveau collaborateur à l'équipe
@@ -439,7 +446,76 @@
          * - Injecter tout le HTML généré dans le conteneur
          */
         function renderSprintBacklog() {
-            // À IMPLÉMENTER
+
+            var option 
+            let sprints = document.getElementById('sprintBacklog');
+            document.getElementById("sprintBacklog")
+                .innerHTML +=
+                `<div class="sprint-container">
+                <div class="sprint-header">
+                    <h3>Sprint 1</h3>
+                <button class="start-sprint-btn">
+                    ▶ Démarer Sprint
+                </button>
+                </div>
+                <div id ="sprin1str" class="sprint-stories"> 
+                </div>
+                </div>
+
+                <div class="sprint-container">
+                <div class="sprint-header">
+                    <h3>Sprint 2</h3>
+                <button class="start-sprint-btn">
+                    ▶ Démarer Sprint
+                </button>
+                </div>
+                <div id ="sprin2str" class="sprint-stories">  
+                </div>
+                </div>
+
+                <div class="sprint-container">
+                <div class="sprint-header">
+                    <h3>Sprint 3</h3>
+                <button class="start-sprint-btn">
+                    ▶ Démarer Sprint
+                </button>
+                </div>
+                <div id ="sprin3str" class="sprint-stories">
+                    
+                </div>
+                </div>
+                `
+            switch (storyIdCounter) {
+                case 0:
+                    document.getElementById("sprin1str")
+                        .innerHTML +=
+                        `<div class="empty-state">Aucune story dans ce sprint</div>
+                    `
+                    document.getElementById("sprin2str")
+                        .innerHTML +=
+                        `<div class="empty-state">Aucune story dans ce sprint</div>
+                    `
+                     document.getElementById("sprin3str")
+                    .innerHTML +=
+                    `<div class="empty-state">Aucune story dans ce sprint</div>
+                    `
+                    break;
+                case 1:
+                        document.getElementById("sprin1str")
+                        .innerHTML +=
+                        `STORY1
+                    `
+                    break;
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    break;
+                default:
+
+            }
         }
 
         /**
@@ -518,4 +594,5 @@
         renderBoard();
     </script>
 </body>
+
 </html>
