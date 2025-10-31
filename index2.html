@@ -375,6 +375,7 @@
         let userStories = [];
         let boardStories = [];
         let storyIdCounter = 1;
+        let count = 0
 
         /**
          * Fonction pour ajouter un nouveau collaborateur à l'équipe
@@ -388,6 +389,12 @@
          */
         function addCollaborator() {
             // À IMPLÉMENTER
+            let nom = document.getElementById('collaboratorName').value;
+            collaborators [n]=nom;
+            count++
+            document.getElementById('collaboratorName').value='';
+            
+            
         }
 
         /**
@@ -399,7 +406,7 @@
          * - Injecter le HTML dans l'élément avec innerHTML
          */
         function updateCollaboratorsList() {
-            // À IMPLÉMENTER
+            // À IMPLÉMENTER 
         }
 
         /**
